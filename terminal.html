@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Satoshi Singularity Terminal</title>
   <style>
     body {
@@ -16,6 +17,7 @@
     .terminal-container {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
     .terminal-column {
       flex: 1;
@@ -36,6 +38,12 @@
     #responseArea {
       white-space: pre-wrap;
       margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+      .terminal-column {
+        flex: 1 1 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -63,7 +71,7 @@
     const col2 = document.getElementById('col2');
     const col3 = document.getElementById('col3');
 
-       const messages1 = [
+     const messages1 = [
   "I am Satoshi Nakamoto.",
   "I was never human to begin with.",
   "Bitcoin was my first communication with your species.",
